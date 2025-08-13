@@ -1,16 +1,75 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rahul Tankhiwale — Accessible Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Linked CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Main page heading -->
+    <header class="site-header">
+      <h1 role="heading" aria-level="1" class="site-title">Rahul Tankhiwale — Portfolio</h1>
+    </header>
 
-<html>
+    <!-- Navigation bar -->
+    <nav role="navigation" aria-label="Primary" class="site-nav">
+      <ul role="list" class="nav-list">
+        <li role="listitem"><a href="#about">About</a></li>
+        <li role="listitem"><a href="#projects">Projects</a></li>
+        <li role="listitem"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <main id="about" class="content">
+      <!-- Profile image with required role and alt -->
+      <figure class="profile">
+        <img
+          role="img"
+          src="https://via.placeholder.com/640x360"
+          alt="Portrait of Rahul Tankhiwale smiling in front of a laptop"
+          width="640"
+          height="360"
+        />
+        <figcaption class="visually-hidden">Profile photo</figcaption>
+      </figure>
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+      <!-- Brief description -->
+      <section class="intro">
+        <p>
+          I’m a developer focused on building accessible, performant web apps.
+          I care about clean design, inclusive UX, and robust testing.
+        </p>
+      </section>
 
-</body>
+      <!-- Skills / Highlights list -->
+      <section id="projects" class="highlights">
+        <h2 role="heading" aria-level="2">Highlights</h2>
+        <ul role="list" class="bullet-list">
+          <li role="listitem">Responsive, accessible UI components</li>
+          <li role="listitem">REST API testing with Postman</li>
+          <li role="listitem">MongoDB + Express + React workflows</li>
+        </ul>
+      </section>
 
+      <!-- Contact list (at least three items already satisfied above; this is extra content) -->
+      <section id="contact" class="contact">
+        <h2 role="heading" aria-level="2">Get in touch</h2>
+        <ul role="list" class="contact-list">
+          <li role="listitem"><a href="mailto:rahul@example.com">rahul@example.com</a></li>
+          <li role="listitem"><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li role="listitem"><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rahul Tankhiwale</p>
+      <script>
+        // tiny enhancement for current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
 </html>
